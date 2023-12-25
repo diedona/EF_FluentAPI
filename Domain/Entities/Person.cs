@@ -3,16 +3,25 @@ using Domain.ValueObjects;
 
 namespace Domain.Entities;
 
-public class Person(
+public class Person : BaseEntity
+{
+    public Email Email { get; private set; }
+    public string Name { get; private set; }
+
+    private Person() { }
+
+    public Person
+    (
         Guid id,
         DateTimeOffset createdAtUTC,
         Email email,
         string name,
         DateTimeOffset? updatedAtUTC = null
-    ) : BaseEntity(id, createdAtUTC, updatedAtUTC)
-{
-    public Email Email { get; private set; } = email;
-    public string Name { get; private set; } = name;
+    ) : base(id, createdAtUTC, updatedAtUTC)
+    {
+        Email = email;
+        Name = name;
+    }
 
     public override string ToString()
     {
