@@ -10,12 +10,14 @@ public class PersonConfiguration : IEntityTypeConfiguration<Person>
     {
         builder.HasKey(x => x.Id);
 
-        builder.OwnsOne(x => x.Email)
-            .Property(x => x.Address)
-                .HasMaxLength(250)
-                .IsRequired();
-
         builder.Property(x => x.Name)
             .HasMaxLength(420);
+
+        builder.ComplexProperty(x => x.Email, e =>
+        {
+            e.Property(y => y.Address)
+                .HasMaxLength(250)
+                .IsRequired();
+        });
     }
 }
