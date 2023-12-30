@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Endpoints.People.Create;
 
-public class CreatePeopleEndpoint : CarterModule
+public class CreatePersonEndpoint : CarterModule
 {
     public override void AddRoutes(IEndpointRouteBuilder app)
     {
@@ -16,7 +16,7 @@ public class CreatePeopleEndpoint : CarterModule
 
     private async Task<Results<NoContent, BadRequest>> HandleAsync(
         [FromServices] ISender _sender,
-        [FromBody] CreatePeopleRequest request,
+        [FromBody] CreatePersonRequest request,
         HttpContext context,
         CancellationToken cancellationToken
     )

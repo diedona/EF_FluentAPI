@@ -2,7 +2,7 @@
 
 namespace WebApi.Endpoints.People.Create;
 
-public record CreatePeopleRequest 
+public record CreatePersonRequest 
 (
     string Name,
     string EmailAddress
