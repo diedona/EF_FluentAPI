@@ -1,4 +1,5 @@
 ﻿using Carter;
+using Domain.Commands.People.Create;
 using MediatR;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;

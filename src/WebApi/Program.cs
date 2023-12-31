@@ -1,4 +1,5 @@
 using Carter;
+using Domain;
 using WebApi.IoC.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,7 +8,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddMediatR(conf =>
 {
-    conf.RegisterServicesFromAssembly(typeof(Program).Assembly);
+    conf.RegisterServicesFromAssembly(typeof(DomainAssemblyPlaceholder).Assembly);
 });
 builder.Services.AddCarter();
 

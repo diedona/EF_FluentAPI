@@ -1,8 +1,8 @@
 ﻿using MediatR;
 
-namespace WebApi.Endpoints.People.Create;
+namespace Domain.Commands.People.Create;
 
-public record CreatePersonRequest 
+public record CreatePersonRequest
 (
     string Name,
     string EmailAddress

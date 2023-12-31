@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace WebApi.Endpoints.People.Create;
+namespace Domain.Commands.People.Create;
 
 public class CreatePersonHandler : IRequestHandler<CreatePersonRequest>
 {
